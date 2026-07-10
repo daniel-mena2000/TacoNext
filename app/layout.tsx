@@ -8,8 +8,8 @@ const font = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "TacoHub NextJs",
-  description: "TacoHub con NextJs",
+  title: "TacoNext",
+  description: "TacoNext con NextJs",
 };
 
 export default function RootLayout({

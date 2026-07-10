@@ -3,14 +3,10 @@ import { PrismaPg } from "@prisma/adapter-pg"; // 2. El adaptador de Prisma 7
 import { categories } from "./data/categories";
 import { products } from "./data/products";
 import { PrismaClient } from "@/src/generated/prisma/client";
+import { prisma } from "@/src/lib/prisma";
+import { pool } from "@/src/lib/prisma";
 
-// Creamos la conexión real a tu base de datos usando tu variable de entorno
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-const adapter = new PrismaPg(pool);
-
-// Se lo pasamos a PrismaClient (¡Esto resuelve el error de los argumentos!)
-const prisma = new PrismaClient({ adapter });
-
+//createMany() sirve para crear varios registros de una sola vez.
 async function main() {
   console.log("Cargando categorías...");
   await prisma.category.createMany({
