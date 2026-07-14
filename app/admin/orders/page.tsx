@@ -1,8 +1,7 @@
 //Aqui van a estarse listando las ordenes
-import OrderCard from "@/components/order/OrderCard";
 import Heading from "@/components/UI/Heading";
 import { getPendingOrders } from "@/src/services/order-service";
-
+import OrderCard from "@/components/order/OrderCard";
 
 
 //Next.js espera que cada archivo page.tsx exporte un componente por defecto (default export), porque ese componente representa la página de esa ruta.

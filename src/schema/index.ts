@@ -15,3 +15,8 @@ export const OrderSchema = z.object({
     }))
 
 })
+
+//Este schema se usa para tranformar  el ID de actualizacion a completada de la order y sea numero
+export const OrderIdSchema = z.object({
+    orderId: z.string().transform((value) => parseInt(value)).refine(value => value > 0, {message: 'No hay coincidencias'})
+})
