@@ -1,7 +1,6 @@
 "use client"
 import { Category } from "@/src/generated/prisma/client"
-import Image from "next/image" //Next tiene una propiedad para renderizar las imagenes
-//Algo bueno de prisma es que te trae los tipos de TS ya sincronizados con tu schema de tu modelo
+import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
 
@@ -13,7 +12,7 @@ type CategoryIconsProps = {
 //Link se usa para el router
 
 export function CategoryIcon({item}: CategoryIconsProps) {
-//useParams para saber en que categoria nos encontramos y en este caso colocar estilos, este solo funciona si el componente es de tipo cliente "use client"
+
     const params = useParams()
     return(
         <div className={`${item.slug === params.category ? 'bg-linear-to-r from-amber-500 to-amber-100' : ''} flex items-center gap-4 w-full border-t border-gray-200 p-2 rounded-2xl`}>

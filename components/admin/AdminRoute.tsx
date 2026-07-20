@@ -10,7 +10,6 @@ type AdminRouteProps = {
     }
 }
 
-//target={link.blank ? '_blank': ''}: Si link.blank esta como true que en este caso en AdminSideBar lo hemos puesto como true, para que esta ruta se abra en una pestaña diferente
 
 export default function AdminRoute({ link }: AdminRouteProps) {
     const pathname = usePathname()

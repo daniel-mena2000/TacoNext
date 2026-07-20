@@ -2,7 +2,7 @@ import AddProductForm from "@/components/products/AddProductForm"
 import ProductForm from "@/components/products/ProductForm"
 import Heading from "@/components/UI/Heading"
 import GoBackButton from "@/components/UI/GoBackButton"
-//Envolveremos "<ProductForm />" ya que es un componente de servidor y podamos renderizarlo en un componente de cliente
+
 export default function CreateProductPage() {
     return(
         <>

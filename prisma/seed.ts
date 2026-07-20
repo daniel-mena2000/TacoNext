@@ -5,7 +5,6 @@ import { products } from "./data/products";
 import { prisma } from "@/src/lib/prisma";
 import { pool } from "@/src/lib/prisma";
 
-//createMany() sirve para crear varios registros de una sola vez.
 async function main() {
   console.log("Cargando categorías...");
   await prisma.category.createMany({
@@ -20,12 +19,12 @@ async function main() {
 
 main()
   .then(async () => {
-    await prisma.$disconnect(); // 1. Apaga el cliente de Prisma
-    await pool.end(); // 2. Cierra el grifo de PostgreSQL
+    await prisma.$disconnect();
+    await pool.end();
   })
   .catch(async (e) => {
     console.error(e);
-    await prisma.$disconnect(); // 2. Apaga Prisma por seguridad
-    await pool.end(); // 3. Cierra el pool por seguridad
-    process.exit(1); // 4. Apaga el script inmediatamente con código de error
+    await prisma.$disconnect();
+    await pool.end();
+    process.exit(1); 
   });

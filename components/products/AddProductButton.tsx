@@ -6,9 +6,6 @@ type AddProductButtonProps = {
     product: Product
 }
 
-
-
-//Este boton es el que agregara al carrito, y por lo tanto necesitamos el state de zustand y zuztand solo se ejecuta en el cliente, para no convertir todo el componente de servidor de "ProductCard" separaremos este boton en un compoente aparte
 export function AddProductButton({product}: AddProductButtonProps) {
 
     const addToOrder = useStore((state) => state.addToOrder)

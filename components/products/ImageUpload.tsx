@@ -6,8 +6,6 @@ import { ImagePlus } from "lucide-react";
 import { CldUploadWidget } from "next-cloudinary";
 import { getImagePath } from "@/src/utils";
 
-//La libreria de cloudinary solo funciona en componentes de cliente
-//Nota: Se creo un input de tipo hidden para validar en Zod que la imagen exista
 
 export default function ImageUpload({image}: {image: string | undefined}) {
     const [imageUrl, setImageUrl] = useState("");
@@ -19,12 +17,10 @@ export default function ImageUpload({image}: {image: string | undefined}) {
         options={{
             maxFiles: 1,
         }}
-//onSuccess - result: Nos va mostrar informacion relacionada con la subida de la imagen, la url donde se alojo nuestra imagen cuando la subimos esta en: result.info.secure_url
-//widget.close(): Si se sube la imagen cerramos el widget de cloudirany
+
             onSuccess={(result, { widget }) => {
                 if (result.event === "success" && typeof result.info === "object" && result.info !== null &&"secure_url" in result.info) {
-//Si la subida de la imagen es success, setearemos la URL que se le asigno a la imagen ya subida
-//open: asignamos open al boton o elemento que abrira el menu de subida
+
                     widget.close();
                     setImageUrl(result.info.secure_url);
                 }

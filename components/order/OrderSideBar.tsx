@@ -2,7 +2,6 @@ import { prisma } from "@/src/lib/prisma";
 import { CategoryIcon } from "../UI/CategoryIcon";
 import { MobileMenu } from "../UI/MobileMenu";
 
-//findMany() sirve para obtener varios registros de una tabla.
 async function getCategories() {
     return await prisma.category.findMany()
 }

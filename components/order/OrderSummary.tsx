@@ -14,28 +14,22 @@ export function OrderSumary() {
     const total = useMemo(() => order.reduce((total, item) => total + (item.quantity * item.price),0), [order])
     const clearOrder = useStore((state) => state.clearOrder)
 
-    //Siempre que tenemos un "action" como handleCreateOrder que esta asociado al action del **form** en automático se pasa un **objeto** de **formData** y le pasamos el Interfaz de **FormData** esta interfaz nos la da TypeScipt, no la tenemos que importar ni nada. Este **formData** tendra los datos de lo que ingreso el usuario en el formulario
+
     const handleCreateOrder = async (formData: FormData) => {
-//Para obtener los datos del formulario lo hacemos con get y pasandole el valor del "name" del input.
-//data: son los datos que enviaremos a la DB
+
         const data = {
             name: formData.get('name'),
             total: total,
             order: order
         }
-//Verificamos con safeParse de zod que la data sea igual que espera el schema de zod
         const result = OrderSchema.safeParse(data)
-        //console.log(result);
 
         if (!result.success) {
-//En issues es donde estan todos los mensajes de error, los iteramos y mostramos
             result.error.issues.forEach(item => {
                 toast.error(item.message)
             })
             return
         }
-
-//Pasa la validación anterior del cliente y se empieza a ejecutar este codigo de servidor, y zod tambien nos ayudara con la validacion del lado de servidor, ya que igual nos interesa que lo que se mande sea lo que esperamos, se valida igual ya que puede que alguien deshabilite JS en el navegador y pueda enviar datos que no son, de igual manera si por ejemplo se deshabilita la condicion del navegador podemos mandar la misma estrucutura de error con un mensaje por parte del servidor con toast
         const response = await createOrder(data)
         if (response?.errors) {
               response.errors.forEach(item => {

@@ -8,7 +8,6 @@ import { redirect } from "next/navigation";
 export function ProductSearchForm() {
 
 
-//Recordar que formData son los datos del formulario - <form action={handleSearchForm}> y se pasan automaticamente
     const handleSearchForm = (formData: FormData) => {
         const data = {
             search: formData.get('search')
@@ -22,8 +21,7 @@ export function ProductSearchForm() {
             })
             return
         }
-//Si el usuario escribio "tacos" lo redireccionamos a: http://localhost:3000/admin/products/search?search=tacos -> si observamos la URL tiene "search" esta page es necesario crearla para poder redigir ahi al usuario para los productos encontrados
-//Una vez capturado, necesitamos capturar ese valor de la URL y hacer una consulta a prisma, y filtrar los productos
+
         redirect(`/admin/products/search?search=${result.data.search}`)
 
     }

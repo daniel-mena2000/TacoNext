@@ -2,7 +2,6 @@
 import { ArrowBigLeft } from "lucide-react"
 import { useRouter } from "next/navigation"
 
-//router.back(): No funciona con Link de Next y colocarlo en su href, es por eso que se usa button con su onclick
 export default function GoBackButton() {
     const router = useRouter()
 

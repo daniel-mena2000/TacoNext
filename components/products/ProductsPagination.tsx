@@ -51,7 +51,6 @@ export function ProductsPaginations({page, totalPages}: ProductsPaginationsProps
 
     </div>
 
-    {/* Pagina siguiente */}
     {page < totalPages && (
         <Link href={`/admin/products?page=${page + 1}`}>
             <button className="group flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-50">

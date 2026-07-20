@@ -7,13 +7,7 @@ import { redirect } from "next/navigation"
 
 
 
-//Aqui tendremos el form que maneja la logica de agregar el producto y tendremos otro muy similar para editar el producto, pero el formulario va a ser el mismo.
-//Aplicaramos OCP: porque el componente puede extender su comportamiento mediante props sin cambiar su implementación
-
-//Children para que acepte ya sea componente de cliente o de servidor, recordar que componentes de cliente no pueden renderizar componentes de servidor directamente como "ProductForm" asi que lo tratamos como un children
-//La idea de que este componente sea de cliente es que queremos los toast para mesajes
 export default function AddProductForm({children}: {children: React.ReactNode}) {
-
 
     const handleSubmit = async (formData: FormData) => {
         const data = {
@@ -30,7 +24,6 @@ export default function AddProductForm({children}: {children: React.ReactNode}) 
             })
             return
        }
-//Si se pasa la validacion mandamos llamar nuestra accion para subirlo a la DB de prisma
        const response = await createProduct(result.data)
        if (response?.errors) {
              response.errors.forEach(issue => {

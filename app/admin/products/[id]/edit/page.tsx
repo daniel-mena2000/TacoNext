@@ -6,9 +6,7 @@ import EditProductForm from "@/components/products/EditProductForm";
 import GoBackButton from "@/components/UI/GoBackButton";
 
 
-//Mandamos llamar la DB para buscar por el id el producto a editar
 async function getProductById(id: number) {
-//findUnique: Se trae el primer registro que cumpla con la condicion
     const product = await prisma.product.findUnique({
         where: {
             id

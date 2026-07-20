@@ -11,9 +11,6 @@ async function getCategories() {
     return await prisma.category.findMany()
 }
 
-//Como este ProductForm lo vamos a reutilizar para agregar y editar un producto, editar necesita que le pasemos un producto, pero agregar NO, es por eso que "product" es opcional.
-//Y en los inputs le pasamos ese product como valor por defecto: defaultValue={product?.name}, No aparecera en el de agregar ya que ese no esta aceptando product, solo lo necesitamos para el formulario de editar y que los valores del producto a editar se pasen en automatico
-
 export default async function ProductForm({product}: ProductFormProps) {
 
     const categories = await getCategories()

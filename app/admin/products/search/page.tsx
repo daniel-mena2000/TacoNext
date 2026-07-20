@@ -5,11 +5,8 @@ import ProductTable from "@/components/products/ProductsTable"
 import { ProductSearchForm } from "@/components/products/ProductSearchForm"
 import GoBackButton from "@/components/UI/GoBackButton"
 
-//Funcion para buscar dentro de nuestra DB de prisma
 async function searchProducts(searchTerm: string) {
-//contains: sirve para buscar palabras o letras dentro de un texto
-//mode: 'insensitive': Quiere decir que acepta mayuculas y minusculas
-//Tambien nos traemos las categorias ya que reutilizaremos "ProductTable" y ahi mostrar nuestra busqueda
+
         const products = await prisma.product.findMany({
             where: {
                 name: {
@@ -25,11 +22,9 @@ async function searchProducts(searchTerm: string) {
         return products
 }
 
-//Obtenemos los parametros de la ruta con searchParams ej: {search: 'Tacos'} y accedemos a search
 export default async function SearchPage({searchParams,}: {searchParams: Promise<{ search?: string }>}) {
 
     const { search } = await searchParams;
-//search puede venir o no
     const products = await searchProducts(search ?? "");
 
     return(
@@ -94,10 +89,6 @@ export default async function SearchPage({searchParams,}: {searchParams: Promise
     </div>
     </>
         )}
-
-
-
-
         </>
     )
 }
