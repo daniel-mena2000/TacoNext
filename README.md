@@ -5,9 +5,14 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg" width="40"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width="40"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-plain.svg" width="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" width="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="40"/>
+
 </p>
 
 ---
+
+# 🌮 TacoNext
 
 ## Aplicación web para la gestión de pedidos y administración de productos de una taquería, desarrollada con Next.js, Prisma, PostgreSQL y Cloudinary.
 
@@ -50,14 +55,12 @@
 
 ---
 
-# 🌮 TacoNext
-
 ## 🚀 Instalación y configuración
 
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/taconext.git
+git https://github.com/daniel-mena2000/TacoNext.git
 ```
 
 ### 2. Entrar al proyecto
