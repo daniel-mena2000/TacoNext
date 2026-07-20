@@ -29,6 +29,7 @@ export async function completeOrder(formData: FormData) {
             })
 
             revalidatePath('/admin/orders')
+            revalidatePath('/admin/orders/completed')
         } catch (error) {
             console.log(error);
 
@@ -38,6 +39,3 @@ export async function completeOrder(formData: FormData) {
 
 
 }
-
-
-

@@ -1,6 +1,9 @@
 import { getCompletedOrders } from "@/src/services/order-service";
 import OrderReady from "@/components/order/OrderReady";
 import GoBackButton from "@/components/UI/GoBackButton";
+
+export const dynamic = "force-dynamic";
+
 export default async function CompletedOrder() {
 
         const orders = await getCompletedOrders()
