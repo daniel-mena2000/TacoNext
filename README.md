@@ -16,6 +16,14 @@
 
 ## Aplicación web para la gestión de pedidos y administración de productos de una taquería, desarrollada con Next.js, Prisma, PostgreSQL y Cloudinary.
 
+## 🌐 Demo
+
+Puedes probar la aplicación desplegada aquí:
+
+---
+
+🔗 **Live Demo:** https://taco-next.vercel.app/order/tacos
+
 ## 🚀 Tecnologías
 
 ### Frontend
