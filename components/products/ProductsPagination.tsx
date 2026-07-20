@@ -14,7 +14,7 @@ export function ProductsPaginations({page, totalPages}: ProductsPaginationsProps
         <>
           <nav className="mt-12 flex items-center justify-center gap-3">
 
-    {/* Página anterior */}
+    {/* Pagina anterior */}
     {page > 1 && (
         <Link href={`/admin/products?page=${page - 1}`}>
             <button className="group flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-50">
@@ -51,7 +51,7 @@ export function ProductsPaginations({page, totalPages}: ProductsPaginationsProps
 
     </div>
 
-    {/* Página siguiente */}
+    {/* Pagina siguiente */}
     {page < totalPages && (
         <Link href={`/admin/products?page=${page + 1}`}>
             <button className="group flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-50">

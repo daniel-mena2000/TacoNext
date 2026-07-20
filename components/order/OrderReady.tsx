@@ -1,6 +1,6 @@
 import { OrderWithProducts } from "@/src/types";
 import { formatCurrency } from "@/src/utils";
-import { completeOrder } from "@/actions/complete-order-action";
+import { deleteOrder } from "@/actions/delete-product-action";
 
 type OrderCardProps = {
     order: OrderWithProducts
@@ -9,7 +9,14 @@ type OrderCardProps = {
 
 
 
-export default function OrderCard({ order }: OrderCardProps) {
+export default function OrderReady({ order }: OrderCardProps) {
+
+    const deleteOrderAction = async () => {
+    "use server";
+
+    await deleteOrder(order.id);
+};
+
     return (
         <section className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg">
 
@@ -67,15 +74,15 @@ export default function OrderCard({ order }: OrderCardProps) {
             </div>
 
 
-            <form action={completeOrder}  className="mt-6">
+            <form action={deleteOrderAction}  className="mt-6">
 
                 <input type="hidden" name="order_id" value={order.id}/>
 
                 <button
                     type="submit"
-                    className="w-full rounded-2xl bg-emerald-600 py-4 text-lg font-bold text-white shadow-md transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg active:scale-95"
+                    className="w-full rounded-2xl bg-red-500 py-4 text-lg font-bold text-white shadow-md transition-all duration-300 hover:bg-red-400 hover:shadow-lg active:scale-95"
                 >
-                ✅ Marcar como completada
+                ✖️ Eliminar
                 </button>
             </form>
 

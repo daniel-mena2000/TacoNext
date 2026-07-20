@@ -61,7 +61,9 @@ export default async function ProductsPage({searchParams}: {searchParams: Promis
 
 
         <Heading
-        title="Administrar Productos"
+        title="🍽️ Panel de administración"
+            description="Administra los productos del menú creando nuevos registros, editando información y realizando búsquedas de forma rápida."
+
         />
 
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

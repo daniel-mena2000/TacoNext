@@ -15,7 +15,7 @@ export async function OrderSiderBar() {
         <>
             <MobileMenu categories={categories} />
 
-           <aside className="hidden md:flex md:w-80 flex-col bg-white border-r border-gray-200">
+           <aside className="hidden md:flex md:w-80 flex-col  border-r border-gray-200">
     <div className="p-6 text-center bg-linear-to-r from-amber-500 to-amber-600 ">
         <h2 className="text-2xl font-bold text-gray-800">
             🌮 Menú

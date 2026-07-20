@@ -2,8 +2,8 @@
 import Heading from "@/components/UI/Heading";
 import { getPendingOrders } from "@/src/services/order-service";
 import OrderCard from "@/components/order/OrderCard";
-
-
+import RefreshOrdersButton from "@/components/order/RefreshOrdersButton";
+import OrderReadyButton from "@/components/order/OrderReadyButton";
 //Next.js espera que cada archivo page.tsx exporte un componente por defecto (default export), porque ese componente representa la página de esa ruta.
 export default async function OrderPageAdmin() {
 //Mandamos llamar las ordenes pendientes
@@ -13,10 +13,17 @@ export default async function OrderPageAdmin() {
 
     return(
         <>
-         <Heading
-            title="🍽️ Panel de administración"
-            description="Visualiza los pedidos pendientes y administra el flujo de trabajo."
-        />
+                <Heading
+                    title="🛎️ Ordenes Pendientes"
+                    description="Visualiza los pedidos pendientes y administra el flujo de trabajo."
+                />
+
+                <div className="flex space-x-5">
+                <RefreshOrdersButton />
+                <OrderReadyButton/>
+
+                </div>
+
 
         {orders.length ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5 mt-5">

@@ -20,3 +20,26 @@ export const OrderSchema = z.object({
 export const OrderIdSchema = z.object({
     orderId: z.string().transform((value) => parseInt(value)).refine(value => value > 0, {message: 'No hay coincidencias'})
 })
+
+//Schema para validar el input de busqueda
+export const SearchSchema = z.object({
+    search: z.string().trim().min(1, {message: 'La busqueda no puede ir vacia'})
+})
+
+//Schema para formulario de AddProductForm
+export const ProductSchema = z.object({
+    name: z.string()
+        .trim()
+        .min(1, { message: 'El Nombre del Producto no puede ir vacio'}),
+    price: z.string()
+        .trim()
+        .transform((value) => parseFloat(value))
+        .refine((value) => value > 0, { message: 'Precio no válido' })
+        .or(z.number().min(1, {message: 'La Categoría es Obligatoria' })),
+    categoryId: z.string()
+        .trim()
+        .transform((value) => parseInt(value))
+        .refine((value) => value > 0, { message: 'La Categoría es Obligatoria' })
+        .or(z.number().min(1, {message: 'La Categoría es Obligatoria' })),
+    image: z.string().min(1, {message: 'Agregar una imagen del producto'})
+})

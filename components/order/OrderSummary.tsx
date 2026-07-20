@@ -7,6 +7,7 @@ import { toast } from "react-toastify"
 import { formatCurrency } from "@/src/utils"
 import { createOrder } from "@/actions/create-order-action"
 import { OrderSchema } from "@/src/schema"
+import { ShoppingCart } from "lucide-react"
 export function OrderSumary() {
 
     const order = useStore((state) => state.order)
@@ -48,8 +49,13 @@ export function OrderSumary() {
 
     return(
         <>
-            <aside className="md:h-screen md:overflow-y-scroll md:w-64 lg:w-96 p-5-">
+            <aside className="md:h-screen md:overflow-y-scroll md:w-64 lg:w-96 p-5">
+
+                <div className="flex justify-center items-center">
+                    <ShoppingCart width={60}/>
                 <h1 className="text-4xl text-center font-black">Mi Pedido</h1>
+                </div>
+
 
                 {order.length === 0 ? <p className="text-center my-10">Tu orden esta vacia</p> : (
                     <div className="mt-5">
