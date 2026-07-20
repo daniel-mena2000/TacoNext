@@ -5,10 +5,11 @@ import OrderCard from "@/components/order/OrderCard";
 import RefreshOrdersButton from "@/components/order/RefreshOrdersButton";
 import OrderReadyButton from "@/components/order/OrderReadyButton";
 
+export const dynamic = "force-dynamic";
 export default async function OrderPageAdmin() {
 
     const orders = await getPendingOrders()
- 
+
 
 
     return(
