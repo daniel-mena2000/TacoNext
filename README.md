@@ -20,9 +20,9 @@
 
 Puedes probar la aplicación desplegada aquí:
 
----
-
 🔗 **Live Demo:** https://taco-next.vercel.app/order/tacos
+
+---
 
 ## 🚀 Tecnologías
 
